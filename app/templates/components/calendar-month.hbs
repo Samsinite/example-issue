@@ -1,0 +1,27 @@
+<header>
+  <button class="move-back-button" {{action 'moveTimeRangeBack'}}>Prev</button>
+  <h2>{{moment day 'MMMM GGGG'}}</h2>
+  <button class="move-forward-button" {{action 'moveTimeRangeForward'}}>Next</button>
+</header>
+<table>
+  <thead>
+    <tr>
+      <th>S</th>
+      <th>M</th>
+      <th>T</th>
+      <th>W</th>
+      <th>T</th>
+      <th>F</th>
+      <th>S</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows as |row|}}
+      <tr>
+        {{#each row as |dayOfWeek|}}
+          <td {{action 'selectDay' dayOfWeek bubbles=false}} class="">{{yield dayOfWeek}}</td>
+        {{/each}}
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

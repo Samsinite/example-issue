@@ -1,0 +1,7 @@
+{{#calendar-month selectedDay=selectedDay on-day-selected="daySelected" as |day|}}
+  <div class="day-title">
+    {{#if day}}
+      {{moment day 'D'}}
+    {{/if}}
+  </div>
+{{/calendar-month}}
